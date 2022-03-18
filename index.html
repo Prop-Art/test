@@ -1481,6 +1481,21 @@ console.log(localStorage.getItem('dataes'))
 }   
 
  </script>
+          <script>
+        function showNotification(){
+            const notification = new Notification("New message",{
+                body:"hey bro"
+            });
+        }
+
+        console.log(Notification.permission);
+        if (Notification.permission ==="granted"){
+            showNotification();
+        }else if (Notification.permission !== "denied"){
+            Notification.requestPermission().then(permission =>{
+                console.log(permission);
+            });
+        }
 </body>
 
 </html>
